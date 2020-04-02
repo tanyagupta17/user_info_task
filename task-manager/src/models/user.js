@@ -72,7 +72,17 @@ s2:{
            }
       }
 
-    }  
+    },
+ total_marks:{
+    type:Number,
+    default:0,
+    validate(value){
+        if(value<0){
+            throw new Error('marks must be postive')
+        }
+   }
+
+}
       
  }) 
 
