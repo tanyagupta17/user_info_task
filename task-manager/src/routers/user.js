@@ -6,7 +6,8 @@ const router = new express.Router()
 
 //post user and save it in database
 router.post('/users',async(req,res)=>{
-    const user = new User(req.body) 
+    const user = new User(req.body)
+    user.total_marks=user.s1+user.s2
     try{
         await user.save()
         res.status(201).send(user) 
